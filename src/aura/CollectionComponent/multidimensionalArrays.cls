@@ -1,8 +1,8 @@
 public class multidimensionalArrays {
-	@AuraEnabled
+    @AuraEnabled
     public static List<List<Opportunity>> getOpps(){
         List<Opportunity> q1 = [SELECT Id, Name, Account.Name, Amount FROM Opportunity WHERE Account.Name = 'ABC Labs'];
-		List<Opportunity> q2 = [SELECT Id, Name, Account.Name, Amount FROM Opportunity WHERE Account.Name = 'Acme Inc.'];
+	List<Opportunity> q2 = [SELECT Id, Name, Account.Name, Amount FROM Opportunity WHERE Account.Name = 'Acme Inc.'];
         
         List<List<Opportunity>> qList = new List<List<Opportunity>>();
         
