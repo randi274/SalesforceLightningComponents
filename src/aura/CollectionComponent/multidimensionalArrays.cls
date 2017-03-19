@@ -12,7 +12,6 @@ public class multidimensionalArrays {
         return qList;
         
     }
-<<<<<<< HEAD
     
     @AuraEnabled
     public static List<Decimal> getAmts(){
@@ -32,6 +31,3 @@ public class multidimensionalArrays {
         
     }
 }
-=======
-}
->>>>>>> 10ac136b9e8c7f953aae1cea11793016d3e94d02
