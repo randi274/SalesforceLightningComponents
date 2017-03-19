@@ -12,4 +12,22 @@ public class multidimensionalArrays {
         return qList;
         
     }
+    
+    @AuraEnabled
+    public static List<Decimal> getAmts(){
+        List<Decimal> amounts = new List<Decimal>();
+        Decimal totalAmount = 0;
+        Decimal totalCommission = 0;
+        
+        for(Opportunity opp : [SELECT Id, Name, Account.Name, Amount, Commission__c FROM Opportunity ORDER BY Commission__c DESC NULLS LAST Limit 5]){
+            totalAmount += opp.Amount;
+            totalCommission += opp.Commission__c;
+        }
+        
+        amounts.add(totalAmount);
+        amounts.add(totalCommission);
+        
+        return amounts;
+        
+    }
 }

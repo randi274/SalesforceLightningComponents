@@ -1,9 +1,12 @@
 <aura:component controller="multidimensionalArrays">
-    <aura:attribute name="Opps0" type="Opportunity[]" />
-    <aura:attribute name="Opps1" type="Opportunity[]" />
+    <aura:attribute name="OppAmt" type="Decimal" />
+    <aura:attribute name="OppCom" type="Decimal" />
     <aura:attribute name="OppList" type="List" />
 
-    <ui:button aura:id="getaccount" label="Get Account" press="{!c.getAccounts}"/>
+    <ui:button aura:id="getopp" label="Get Opportunity" press="{!c.getOpportunities}"/>
+    <ui:button aura:id="getamt" label="Get Amounts" press="{!c.getAmounts}"/>
+    <ui:outputText aura:id="amountTotal" value="{!v.OppAmt}"/>
+    <ui:outputText aura:id="commissionTotal" value="{!v.OppCom}"/>
     <br/>
 
     <table class="slds-table slds-table--bordered slds-table--cell-buffer">
