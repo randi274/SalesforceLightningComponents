@@ -1,0 +1,47 @@
+<aura:component controller="multidimensionalArrays">
+    <aura:attribute name="Opps0" type="Opportunity[]" />
+    <aura:attribute name="Opps1" type="Opportunity[]" />
+    <aura:attribute name="OppList" type="List" />
+
+    <ui:button aura:id="getaccount" label="Get Account" press="{!c.getAccounts}"/>
+    <br/>
+
+    <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+        <thead>
+            <tr class="slds-text-title--caps">
+                <th scope="col">
+                    <div class="slds-truncate" title="Id">Id</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Opportunity Name">Opportunity Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Account Name">Account Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Amount">Amount</div>
+                </th>
+            </tr>
+        </thead>
+        <aura:iteration items="{!v.OppList}" var="ListItem">
+        	<tbody>
+                <aura:iteration items="{!ListItem}" var="Opp">
+                    <tr>
+                        <td data-label="Id"> 
+                            <div class="slds-truncate" title="Id">{!Opp.Id}</div>
+                        </td>
+                        <td data-label="Opportunity Name">
+                            <div class="slds-truncate" title="Opportunity Name">{!Opp.Name}</div>
+                        </td>
+                        <td data-label="Account Name">
+                            <div class="slds-truncate" title="Account Name">{!Opp.Account.Name}</div>
+                        </td>
+                        <td data-label="Amount">
+                            <div class="slds-truncate" title="Amount">{!Opp.Amount}</div>
+                        </td>
+                    </tr>
+                </aura:iteration>
+        	</tbody>
+       </aura:iteration>
+    </table>
+</aura:component>
