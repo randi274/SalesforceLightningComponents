@@ -1,8 +1,8 @@
 public class multidimensionalArrays {
-	@AuraEnabled
+    @AuraEnabled
     public static List<List<Opportunity>> getOpps(){
         List<Opportunity> q1 = [SELECT Id, Name, Account.Name, Amount FROM Opportunity WHERE Account.Name = 'ABC Labs'];
-		List<Opportunity> q2 = [SELECT Id, Name, Account.Name, Amount FROM Opportunity WHERE Account.Name = 'Acme Inc.'];
+	List<Opportunity> q2 = [SELECT Id, Name, Account.Name, Amount FROM Opportunity WHERE Account.Name = 'Acme Inc.'];
         
         List<List<Opportunity>> qList = new List<List<Opportunity>>();
         
@@ -12,6 +12,7 @@ public class multidimensionalArrays {
         return qList;
         
     }
+<<<<<<< HEAD
     
     @AuraEnabled
     public static List<Decimal> getAmts(){
@@ -31,3 +32,6 @@ public class multidimensionalArrays {
         
     }
 }
+=======
+}
+>>>>>>> 10ac136b9e8c7f953aae1cea11793016d3e94d02
